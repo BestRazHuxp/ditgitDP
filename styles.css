@@ -1,0 +1,136 @@
+/* styles.css */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+/*-------------------------------------*/
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    
+    display: flex;
+}
+/*-------------------------------------*/
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+h1 {
+    color: #f4f4f9;
+}
+
+h2 {
+    color: #4CAF50;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style-type: square;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Căn chỉnh cho sidebar */
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+
+#sidebar h3 {
+    margin-top: 0;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    margin: 10px 0;
+}
+
+#sidebar ul li ul {
+    margin-left: 20px;
+}
+
+#sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+#sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Căn chỉnh cho nội dung chính */
+#main-content {
+    margin-right: 270px; /* Đẩy nội dung chính sang trái để nhường chỗ cho sidebar */
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
