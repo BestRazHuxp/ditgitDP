@@ -1,12 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <style source = "index.css"></style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> First </title>
+    <title>Quy hoạch động - Chữ số</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 id = "title">hello</h1>
+    <header>
+        <h1>Quy hoạch Động - Chữ số</h1>
+        <nav>
+            <ul>
+                <li><a href="#giai-thich">Giải thích</a></li>
+                <li><a href="#bai-tap">Bài tập</a></li>
+                <li><a href="#tai-nguyen">Tài nguyên hữu ích</a></li>
+            </ul>
+        </nav>
+    </header>
+
+      <aside id="sidebar">
+        <h3>Nội dung trang</h3>
+        <ul>
+            <li><a href="#giai-thich">Quy hoạch động cơ bản (Phần 1)</a></li>
+            <li><a href="#gioi-thieu">Giới thiệu</a></li>
+            <li><a href="#beginner">Beginner</a>
+                <ul>
+                    <li><a href="#vi-du-1">Ví dụ 1</a></li>
+                    <li><a href="#phuong-phap">Phương pháp tiếp cận</a></li>
+                    <li><a href="#vi-du-2">Ví dụ 2</a></li>
+                    <li><a href="#tim-do-dai">Tìm độ dài dãy không giảm dài nhất</a></li>
+                </ul>
+            </li>
+            <li><a href="#intermediate">Intermediate</a>
+                <ul>
+                    <li><a href="#knapsack">Xếp vali (Knapsack)</a></li>
+                    <li><a href="#mo-hinh">Mô hình</a></li>
+                    <li><a href="#cong-thuc">Công thức</a></li>
+                    <li><a href="#cai-dat">Cài đặt</a></li>
+                    <li><a href="#bai-toan-khac">Một số bài toán khác</a></li>
+                </ul>
+            </li>
+            <li><a href="#ket">Kết</a></li>
+        </ul>
+    </aside>
+
+    <!-- Nội dung chính -->
+    <main id="main-content">
+        <section id="gioi-thieu-thanh-vien">
+            <h2>Giới thiệu thành viên nhóm</h2>
+            <ul>
+                <li>Lê Vũ Thiêm Hoàng</li>
+                <li>Nguyễn Thanh Hưng</li>
+                <li>Trần Cát Thịnh</li>
+            </ul>
+        </section>
+
+    <section id="giai-thich">
+        <h2>Giải thích về Quy hoạch Động Chữ số</h2>
+        <p><strong>Quy hoạch động chữ số (Digit DP)</strong> là một kỹ thuật được sử dụng để giải quyết các bài toán yêu cầu tìm số lượng các số nguyên trong một khoảng nhất định thỏa mãn một tính chất nào đó dựa trên các chữ số của chúng. Thông thường, các khoảng này bao gồm những số rất lớn (ví dụ từ <strong>1</strong> đến <strong>10<sup>18</sup></strong>), do đó, việc lặp qua từng số và kiểm tra xem chúng có thỏa mãn tính chất yêu cầu hay không sẽ quá chậm. <strong>Quy hoạch động chữ số</strong> khai thác đặc điểm của các chữ số để nhanh chóng đếm số lượng các số nguyên có tính chất cần tìm trong khoảng giá trị cho trước.</p>
+
+        <p>Một ví dụ điển hình là bài toán tìm dãy con tăng dài nhất trong một dãy số.</p>
+    </section>
+
+    <section id = "bai-tap">
+        <h2> Bài tập</h2>
+    </section>
+
+    <section id="tai-nguyen">
+        <h2>Tài nguyên hữu ích</h2>
+        <p>Dưới đây là một số trang web có thể giúp bạn nắm vững thêm về quy hoạch động:</p>
+        <ul>
+            <li><a href="https://www.geeksforgeeks.org/dynamic-programming/" target="_blank">Dynamic Programming - GeeksforGeeks</a></li>
+            <li><a href="https://www.coursera.org/learn/algorithmic-thinking-2" target="_blank">Coursera: Algorithmic Thinking</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2024 - Quy hoạch Động Chữ số</p>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
