@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution (Maximum Product) </title>
+    <style>
+        body {
+            font-family: Consolas;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4A90E2;
+        }
+        h2 {
+            color: #E94E77;
+        }
+        pre {
+            background-color: #e8e8e8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        iframe {
+            width: 75%;
+            height: 500px; /* Thay đổi chiều cao tùy theo nhu cầu */
+            border: 1px solid #ccc;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="section">
+        <h2>Mục Tiêu</h2>
+        <p>Tìm một số trong khoảng giữa hai số <strong>x</strong> và <strong>y</strong>, với các điều kiện:</p>
+        <ul>
+            <li>Số phải không nhỏ hơn <strong>x</strong>.</li>
+            <li>Số phải không lớn hơn <strong>y</strong>.</li>
+            <li>Số không được bắt đầu bằng số 0 (trừ khi số đó là 0).</li>
+            <li>Tính tạo thành bởi các chữ số của số tìm được là lớn nhất</li>
+        </ul>
+    </div>
+    <div class="section"></div>
+        <h2>Ý Tưởng</h2>
+        <p>Sử dụng mảng <code>dp</code> để lưu trữ kết quả cho từng chỉ số dựa trên trạng thái:</p>
+        <ul>
+            <li><strong>ok</strong>: Đã tìm thấy chữ số khác 0.</li>
+            <li><strong>under</strong>: Số đang tạo ra nhỏ hơn <strong>y</strong>.</li>
+            <li><strong>greater</strong>: Số đang tạo ra lớn hơn <strong>x</strong>.</li>
+            <li>Với mỗi trạng thái <strong>dp[i][ok][under][greater]</strong> ta sẽ xét các chữ số mà ở vị trí i có thể điền được</li>
+            <li>Theo đó kết quả ở vị trí thứ i sẽ là:</li>
+                <div>
+                    for (int j = lo ; j <= hi ; j++) dp[i] = max(dp[i + 1] * j) (j là các số mà vị trí i nhận được)
+                </div>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Biến Đổi Dữ Liệu</h2>
+        <p>Thêm ký tự '0' vào đầu các chuỗi <strong>x</strong> và <strong>y</strong> để dễ dàng so sánh.</p>
+    </div>
+
+    
+
+    <div class="section">
+        <h2>Đệ Quy và Truy Vết</h2>
+        <p>Hàm <code>dq</code> sử dụng đệ quy để kiểm tra từng chữ số và lưu thông tin để truy vết số cuối cùng.</p>
+    </div>
+    <div clas="section"> 
+        <h2>Code Mẫu:</h2>
+          </div>
+    <iframe src="sol.cpp" frameborder="0" id = "sol"></iframe>
+
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution (Maximum Product)</title>
+   
+</head>
+<body>
+
+</body>
+</html> -->
