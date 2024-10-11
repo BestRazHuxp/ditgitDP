@@ -1,87 +1,87 @@
-    <!DOCTYPE html>
-    <html lang="vi">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Quy hoạch động - Chữ số</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header class="navbar">
-            <div class="icon">
-                <h2>HHT</h2>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quy hoạch động - Chữ số</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="icon">
+            <h2>HHT</h2>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm...">
+            <button id="searchButton">Tìm</button>
+        </div>
+        <button id="darkModeToggle" class="dark-mode-toggle">Dark Mode</button>
+    </header>
+
+
+    <main id="main-content">
+        <section id="gioi-thieu-thanh-vien">
+            <h2>Giới thiệu thành viên nhóm</h2>
+            <ul>
+                <li>Lê Vũ Thiêm Hoàng</li>
+                <li>Nguyễn Thanh Hưng</li>
+                <li>Trần Cát Thịnh</li>
+            </ul>
+        </section>
+
+        <section id="giai-thich">
+            <h2>Giải thích về Quy hoạch Động Chữ số</h2>
+            <p><strong>Quy hoạch động chữ số (Digit DP)</strong> là một kỹ thuật được sử dụng để giải quyết các bài toán yêu cầu tìm số lượng các số nguyên trong một khoảng nhất định thỏa mãn một tính chất nào đó dựa trên các chữ số của chúng. Thông thường, các khoảng này bao gồm những số rất lớn (ví dụ từ <strong>1</strong> đến <strong>10<sup>18</sup></strong>), do đó, việc lặp qua từng số và kiểm tra xem chúng có thỏa mãn tính chất yêu cầu hay không sẽ quá chậm. <strong>Quy hoạch động chữ số</strong> khai thác đặc điểm của các chữ số để nhanh chóng đếm số lượng các số nguyên có tính chất cần tìm trong khoảng giá trị cho trước.</p>
+        </section>
+
+        <section id="bai-tap">
+            <h2> Bài tập</h2>
+            <ul>
+                <li><a href="https://codeforces.com/gym/100886/problem/G">Maximum Product</a></li>
+            </ul>
+        </section>
+        <section id="cach-giai"></section>
+            <h2> Lời giải</h2>
+            <ul>
+                <li><a href="sol.html">Maximum Product</a></li>
+            </ul>
+        </section>
+        <section id="tai-nguyen">
+            <h2>Tài nguyên hữu ích</h2>
+            <ul>
+                <li><a href="https://usaco.guide/gold/digit-dp" target="_blank">DP digit - USACO</a></li>
+                <li><a href="https://www.geeksforgeeks.org/dynamic-programming/" target="_blank">Dynamic Programming - GeeksforGeeks</a></li>
+                <li><a href="https://www.coursera.org/learn/algorithmic-thinking-2" target="_blank">Coursera: Algorithmic Thinking</a></li>
+            </ul>
+        </section>
+
+        <section id="rating-section">
+            <h2>Đánh giá mức độ hiểu bài</h2>
+            <div class="rating">
+                <span class="star" data-value="10">&#9733;</span>
+                <span class="star" data-value="9">&#9733;</span>
+                <span class="star" data-value="8">&#9733;</span>
+                <span class="star" data-value="7">&#9733;</span>
+                <span class="star" data-value="6">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="1">&#9733;</span>
             </div>
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Tìm kiếm...">
-                <button id="searchButton">Tìm</button>
-            </div>
-            <button id="darkModeToggle" class="dark-mode-toggle">Dark Mode</button>
-        </header>
+            <p>Bạn đã đánh giá: <span id="rating-value">10</span> sao</p>
+        </section>
+    </main>
+    <a>Các bạn có thể nghe nhạc nếu muốn 👉👈: </a> <a href="media/index.html">Music</a>
+    <footer>
+        <p>© 2024 - Quy hoạch Động Chữ số</p>
+        <a>Liên hệ phây búc:</a>
+    <ul>
+    <li><a href = "https://www.facebook.com/profile.php?id=100076978767628">Hưng</a></li>
+    <li><a href = "https://www.facebook.com/diamond487">Hoàng</a></li>
+    <li><a href = "https://www.facebook.com/catthinh.tran.3">Thịnh</a></li>
+    </footer>
 
-
-        <main id="main-content">
-            <section id="gioi-thieu-thanh-vien">
-                <h2>Giới thiệu thành viên nhóm</h2>
-                <ul>
-                    <li>Lê Vũ Thiêm Hoàng</li>
-                    <li>Nguyễn Thanh Hưng</li>
-                    <li>Trần Cát Thịnh</li>
-                </ul>
-            </section>
-
-            <section id="giai-thich">
-                <h2>Giải thích về Quy hoạch Động Chữ số</h2>
-                <p><strong>Quy hoạch động chữ số (Digit DP)</strong> là một kỹ thuật được sử dụng để giải quyết các bài toán yêu cầu tìm số lượng các số nguyên trong một khoảng nhất định thỏa mãn một tính chất nào đó dựa trên các chữ số của chúng. Thông thường, các khoảng này bao gồm những số rất lớn (ví dụ từ <strong>1</strong> đến <strong>10<sup>18</sup></strong>), do đó, việc lặp qua từng số và kiểm tra xem chúng có thỏa mãn tính chất yêu cầu hay không sẽ quá chậm. <strong>Quy hoạch động chữ số</strong> khai thác đặc điểm của các chữ số để nhanh chóng đếm số lượng các số nguyên có tính chất cần tìm trong khoảng giá trị cho trước.</p>
-            </section>
-
-            <section id="bai-tap">
-                <h2> Bài tập</h2>
-                <ul>
-                    <li><a href="https://codeforces.com/gym/100886/problem/G">Maximum Product</a></li>
-                </ul>
-            </section>
-            <section id="cach-giai"></section>
-                <h2> Lời giải</h2>
-                <ul>
-                    <li><a href="sol.html">Maximum Product</a></li>
-                </ul>
-            </section>
-            <section id="tai-nguyen">
-                <h2>Tài nguyên hữu ích</h2>
-                <ul>
-                    <li><a href="https://usaco.guide/gold/digit-dp" target="_blank">DP digit - USACO</a></li>
-                    <li><a href="https://www.geeksforgeeks.org/dynamic-programming/" target="_blank">Dynamic Programming - GeeksforGeeks</a></li>
-                    <li><a href="https://www.coursera.org/learn/algorithmic-thinking-2" target="_blank">Coursera: Algorithmic Thinking</a></li>
-                </ul>
-            </section>
-
-            <section id="rating-section">
-                <h2>Đánh giá mức độ hiểu bài</h2>
-                <div class="rating">
-                    <span class="star" data-value="10">&#9733;</span>
-                    <span class="star" data-value="9">&#9733;</span>
-                    <span class="star" data-value="8">&#9733;</span>
-                    <span class="star" data-value="7">&#9733;</span>
-                    <span class="star" data-value="6">&#9733;</span>
-                    <span class="star" data-value="5">&#9733;</span>
-                    <span class="star" data-value="4">&#9733;</span>
-                    <span class="star" data-value="3">&#9733;</span>
-                    <span class="star" data-value="2">&#9733;</span>
-                    <span class="star" data-value="1">&#9733;</span>
-                </div>
-                <p>Bạn đã đánh giá: <span id="rating-value">10</span> sao</p>
-            </section>
-        </main>
-
-        <footer>
-            <p>© 2024 - Quy hoạch Động Chữ số</p>
-            <a>Liên hệ phây búc:</a>
-        <ul>
-        <li><a href = "https://www.facebook.com/profile.php?id=100076978767628">Hưng</a></li>
-        <li><a href = "https://www.facebook.com/diamond487">Hoàng</a></li>
-        <li><a href = "https://www.facebook.com/catthinh.tran.3">Thịnh</a></li>
-        </footer>
-
-        <script src="scripts.js"></script>
-    </body>
-    </html>
+    <script src="scripts.js"></script>
+</body>
+</html>
