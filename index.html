@@ -38,13 +38,59 @@
             <h2> Bài tập</h2>
             <ul>
                 <li><a href="https://codeforces.com/gym/100886/problem/G">Maximum Product</a></li>
-            </ul>
+                <h2> Lời giải:</h2>
+                    <div class="section">
+                        <p>Mục Tiêu</p>
+                        <p>Tìm một số trong khoảng giữa hai số <strong>x</strong> và <strong>y</strong>, với các điều kiện:</p>
+                        <ul>
+                            <li>Số phải không nhỏ hơn <strong>x</strong>.</li>
+                            <li>Số phải không lớn hơn <strong>y</strong>.</li>
+                            <li>Số không được bắt đầu bằng số 0 (trừ khi số đó là 0).</li>
+                            <li>Tính tạo thành bởi các chữ số của số tìm được là lớn nhất</li>
+                        </ul>
+                    </div>
+                    <div class="section"></div>
+                        <p>Ý Tưởng:</p>
+                        <p>Sử dụng mảng <code>dp</code> để lưu trữ kết quả cho từng chỉ số dựa trên trạng thái:</p>
+                        <ul>
+                            <li><strong>ok</strong>: Đã tìm thấy chữ số khác 0.</li>
+                            <li><strong>under</strong>: Số đang tạo ra nhỏ hơn <strong>y</strong>.</li>
+                            <li><strong>greater</strong>: Số đang tạo ra lớn hơn <strong>x</strong>.</li>
+                            <li>Với mỗi trạng thái <strong>dp[i][ok][under][greater]</strong> ta sẽ xét các chữ số mà ở vị trí i có thể điền được</li>
+                            <li>Theo đó kết quả ở vị trí thứ i sẽ là:</li>
+                                <div>
+                                    for (int j = lo ; j <= hi ; j++) dp[i] = max(dp[i + 1] * j) (j là các số mà vị trí i nhận được)
+                                </div>
+                        </ul>
+                    </div>
+                    <div class="section">
+                        <p>Biến Đổi Dữ Liệu</p>
+                        <p>Thêm ký tự '0' vào đầu các chuỗi <strong>x</strong> và <strong>y</strong> để dễ dàng so sánh.</p>
+                    </div>
+                
+                    
+                
+                    <div class="section">
+                        <p>Đệ Quy và Truy Vết</p>
+                        <p>Hàm <code>dq</code> sử dụng đệ quy để kiểm tra từng chữ số và lưu thông tin để truy vết số cuối cùng.</p>
+                    </div>
+                    <div clas="section"> 
+                        <h2>Code Mẫu:</h2>
+                          </div>
+                    <iframe src="sol.cpp" frameborder="0" id = "sol"></iframe>
+            <br>
+            <br>
+            <li><a href="https://atcoder.jp/contests/dp/tasks/dp_s">Digit Sum</a></li>
+            <h2>Lời giải:</h2>
+            <p><strong>Độ phức tạp thời gian:</strong> <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43E TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mo stretchy="false">|</mo></mrow><mi>K</mi><mrow data-mjx-texclass="ORD"><mo stretchy="false">|</mo></mrow><mi>D</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></p>
+            <p>Ta có thể dùng <a href="https://codeforces.cc/blog/entry/53960">quy hoạch động chữ số</a> để giải bài toán này. Gọi <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>d</mi><mi>p</mi><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo></math></mjx-assistive-mml></mjx-container> là số cách để xây dựng một số có <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">|</mo><mi>K</mi><mo stretchy="false">|</mo></math></mjx-assistive-mml></mjx-container> chữ số và tổng chữ số chia hết <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi></math></mjx-assistive-mml></mjx-container>, sao cho <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math></mjx-assistive-mml></mjx-container> chữ số đầu cố định và tổng <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math></mjx-assistive-mml></mjx-container> chữ số đó chia <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi></math></mjx-assistive-mml></mjx-container> dư <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>j</mi></math></mjx-assistive-mml></mjx-container>.</p>
+            <p>Để tính đáp án, ta duyệt qua tất cả các tiền tố của xâu <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>K</mi></math></mjx-assistive-mml></mjx-container> và tính số cách để điền phần hậu tố còn lại của xâu bằng mảng quy hoạch động trên.</p>
+            <br>
+            <br>
+            <li><a href = "exc.html">Bài cúi:</a> </li>
+        </ul>
         </section>
         <section id="cach-giai"></section>
-            <h2> Lời giải</h2>
-            <ul>
-                <li><a href="sol.html">Maximum Product</a></li>
-            </ul>
         </section>
         <section id="tai-nguyen">
             <h2>Tài nguyên hữu ích</h2>
