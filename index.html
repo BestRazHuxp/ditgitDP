@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quy hoạch động - Chữ số</title>
+    <link rel="stylesheet" href="prism.css">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <title>Quy hoạch động - Chữ số</title>
 </head>
 <body>
     <header class="navbar">
@@ -19,23 +23,57 @@
     </header>
 
 
+    <section id="mo-dau">
+        <h2 style="color: #0dc359;">Quy hoạch động chữ số</h2>
+    </section>
+
     <main id="main-content">
         <section id="gioi-thieu-thanh-vien">
-            <h2>Giới thiệu thành viên nhóm</h2>
+            <h2 style="color: #0dc359;">Người viết</h2>
             <ul>
-                <li>Lê Vũ Thiêm Hoàng</li>
-                <li>Nguyễn Thanh Hưng</li>
-                <li>Trần Cát Thịnh</li>
+                <li>Lê Vũ Thiêm Hoàng, THPT Chuyên Hùng Vương, Bình Dương</li>
+                <li>Nguyễn Thanh Hưng, THPT Chuyên Hùng Vương, Bình Dương</li>
+                <li>Trần Cát Thịnh, THPT Chuyên Hùng Vương, Bình Dương</li>
             </ul>
         </section>
 
+        <div class="container">
+            <h2 style="color: #0dc359;">Tài nguyên</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Resource</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div class="icon"></div></td>
+                        <td><a href="https://dp-book.com/Dynamic_Programming.pdf">Dynamic Programming for Computing Contests</a></td>
+                    </tr>
+                    <tr>
+                        <td><div class="icon"></div></td>
+                        <td><a href="https://www.geeksforgeeks.org/digit-dp-introduction/">Digit DP | Introduction</a></td>
+                    </tr>
+                    <tr>
+                        <td><div class="icon"></div></td>
+                        <td><a href="https://www.geeksforgeeks.org/digit-dp-introduction/">Introduction to Digit Dynamic Programming</a><span class="note">Great introduction video</span></td>
+                    </tr>
+                    <tr>
+                        <td><div class="icon"></div></td>
+                        <td><a href="https://codeforces.com/blog/entry/53960">Digit DP</a></td>
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+
         <section id="giai-thich">
-            <h2>Giải thích về Quy hoạch Động Chữ số</h2>
+            <h2 style="color: #0dc359;">Giải thích về Quy hoạch Động Chữ số</h2>
             <p><strong>Quy hoạch động chữ số (Digit DP)</strong> là một kỹ thuật được sử dụng để giải quyết các bài toán yêu cầu tìm số lượng các số nguyên trong một khoảng nhất định thỏa mãn một tính chất nào đó dựa trên các chữ số của chúng. Thông thường, các khoảng này bao gồm những số rất lớn (ví dụ từ <strong>1</strong> đến <strong>10<sup>18</sup></strong>), do đó, việc lặp qua từng số và kiểm tra xem chúng có thỏa mãn tính chất yêu cầu hay không sẽ quá chậm. <strong>Quy hoạch động chữ số</strong> khai thác đặc điểm của các chữ số để nhanh chóng đếm số lượng các số nguyên có tính chất cần tìm trong khoảng giá trị cho trước.</p>
         </section>
 
         <section id="bai-tap">
-            <h2> Bài tập</h2>
+            <h2 style="color: #0dc359;"> Bài tập</h2>
             <ul>
                 <li><a href="https://codeforces.com/gym/100886/problem/G">Maximum Product</a></li>
                 <h2> Lời giải:</h2>
@@ -67,17 +105,84 @@
                         <p>Biến Đổi Dữ Liệu</p>
                         <p>Thêm ký tự '0' vào đầu các chuỗi <strong>x</strong> và <strong>y</strong> để dễ dàng so sánh.</p>
                     </div>
-                
-                    
-                
+
+
+
                     <div class="section">
                         <p>Đệ Quy và Truy Vết</p>
                         <p>Hàm <code>dq</code> sử dụng đệ quy để kiểm tra từng chữ số và lưu thông tin để truy vết số cuối cùng.</p>
                     </div>
-                    <div clas="section"> 
+                    <div clas="section">
                         <h2>Code Mẫu:</h2>
-                          </div>
-                    <iframe src="sol.cpp" frameborder="0" id = "sol"></iframe>
+                    </div>
+                    <!-- <iframe src="sol.cpp" frameborder="0" id = "sol"></iframe> -->
+                    <div class="code-container">
+                        <pre class="line-numbers"><code class="language-cpp">
+
+template &lt;typename T1, typename T2&gt; bool minimize(T1 &amp;a, T2 b){if (a &gt; b) {a = b; return true;} return false;}
+template &lt;typename T1, typename T2&gt; bool maximize(T1 &amp;a, T2 b){if (a &lt; b) {a = b; return true;} return false;}
+const int inf = 1e9 + 7;
+const ll linf = 1ll * inf * inf;
+const int base = 31;
+const int mod = 1e9 + 7;
+const int maxn = 3e5 + 2;
+
+void setIO(string task, string i, string o, bool use)
+{
+    //if (!fopen((task + "." + i).c_str(), "r")) task = "1" , i = "inp", o = "out";
+    if (fopen((task + "." + i).c_str(), "r") &amp;&amp; use) {
+        freopen((task + "." + i).c_str(), "r", stdin);
+        freopen((task + "." + o).c_str(), "w", stdout);
+    }
+}
+string x , y;
+ll dp[100][2][2][2];
+int trace[100][2][2][2];
+ll dq(int i, bool ok , bool under , bool greater){
+    ll &amp;res = dp[i][ok][under][greater];
+    if(res != -1) return res;
+    if(i == sz(x)){
+        return res = 1;
+    }
+    int hi = (under ? 9 : y[i] - '0');
+    int lo = (greater ? 0 : x[i] - '0');
+    for(int j = lo ; j &lt;= hi ; j++){
+        if(maximize(res , (!ok &amp;&amp; !j ? 1 : j) * dq(i + 1, ok || j != 0 , under || j &lt; hi , greater || j &gt; lo))){
+            trace[i][ok][under][greater] = j;
+        }
+    }
+    return res;
+}
+void t(int i , bool ok , bool under, bool greater){
+    if(i == sz(x)) return;
+    int j = trace[i][ok][under][greater];
+    if(j || ok) cout &lt;&lt; j;
+    int hi = (under ? 9 : y[i] - '0');
+    int lo = (greater ? 0 : x[i] - '0');
+    t(i + 1, ok || j , under || j &lt; hi , greater || j &gt; lo);
+}
+void doo(const int &amp;ts){
+    cin &gt;&gt; x &gt;&gt; y;
+    x = "0" + x;
+    y = "0" + y;
+    while(sz(x) &lt; sz(y)) x = "0" + x;
+    memset(dp, -1, sizeof dp);
+    dq(1, 0 , 0 , 0);
+    t(1, 0 , 0 , 0);
+}
+int main()
+{
+    setIO("odometer", "in", "out", true);
+    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+    int t = 1;
+    //cin &gt;&gt; t;
+    for(int i = 1; i &lt;= t; i++) doo(i);
+}
+/* Keep typing, Keep loving Linh &lt;3  */
+                            
+                        </code></pre>
+                    </div>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
             <br>
             <br>
             <li><a href="https://atcoder.jp/contests/dp/tasks/dp_s">Digit Sum</a></li>
@@ -85,8 +190,6 @@
             <p><strong>Độ phức tạp thời gian:</strong> <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D442 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43E TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-texatom><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mo stretchy="false">(</mo><mrow data-mjx-texclass="ORD"><mo stretchy="false">|</mo></mrow><mi>K</mi><mrow data-mjx-texclass="ORD"><mo stretchy="false">|</mo></mrow><mi>D</mi><mo stretchy="false">)</mo></math></mjx-assistive-mml></mjx-container></p>
             <p>Ta có thể dùng <a href="https://codeforces.cc/blog/entry/53960">quy hoạch động chữ số</a> để giải bài toán này. Gọi <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D451 TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>d</mi><mi>p</mi><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo></math></mjx-assistive-mml></mjx-container> là số cách để xây dựng một số có <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43E TEX-I"></mjx-c></mjx-mi><mjx-mo class="mjx-n"><mjx-c class="mjx-c7C"></mjx-c></mjx-mo></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">|</mo><mi>K</mi><mo stretchy="false">|</mo></math></mjx-assistive-mml></mjx-container> chữ số và tổng chữ số chia hết <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi></math></mjx-assistive-mml></mjx-container>, sao cho <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math></mjx-assistive-mml></mjx-container> chữ số đầu cố định và tổng <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D456 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math></mjx-assistive-mml></mjx-container> chữ số đó chia <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D437 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>D</mi></math></mjx-assistive-mml></mjx-container> dư <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D457 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>j</mi></math></mjx-assistive-mml></mjx-container>.</p>
             <p>Để tính đáp án, ta duyệt qua tất cả các tiền tố của xâu <mjx-container class="MathJax" jax="CHTML" style="font-size: 113.1%; position: relative;"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D43E TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>K</mi></math></mjx-assistive-mml></mjx-container> và tính số cách để điền phần hậu tố còn lại của xâu bằng mảng quy hoạch động trên.</p>
-            <h2>Code Mẫu:</h2>
-            <iframe src="sol2.cpp" frameborder="0" id = "sol"></iframe>
             <br>
             <br>
             <li><a href = "exc.html">Bài cúi:</a> </li>
@@ -95,7 +198,7 @@
         <section id="cach-giai"></section>
         </section>
         <section id="tai-nguyen">
-            <h2>Tài nguyên hữu ích</h2>
+            <h2 style="color: #0dc359;">Một số trang web hữu ích</h2>
             <ul>
                 <li><a href="https://usaco.guide/gold/digit-dp" target="_blank">DP digit - USACO</a></li>
                 <li><a href="https://www.geeksforgeeks.org/dynamic-programming/" target="_blank">Dynamic Programming - GeeksforGeeks</a></li>
