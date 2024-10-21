@@ -55,6 +55,7 @@ header.navbar {
     z-index: 999;
 }
 
+
 /* Sidebar content positioning */
 #main-content {
     margin-right: 270px; /* Adjust for sidebar on the right */
@@ -97,4 +98,48 @@ header.navbar {
 #sol{
     width: 1000px;
     height: 1000px;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: left;
+}
+
+.container h1 {
+    color: #b39ddb;
+    text-align: center;
+}
+
+.container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.container th {
+    background-color: #0dc359;
+    padding: 10px;
+    text-align: left;
+}
+
+.container td {
+    background-color: #303030;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.container a {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+
+.container .note {
+    color: #ccc;
+    font-size: 0.9em;
+    margin-left: 10px;
 }
